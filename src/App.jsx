@@ -1,15 +1,20 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useEffect, useState } from "react";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import Dashboard from "./Pages/Dashboard/Dashboard";
+import Profile from "./Pages/Profile/Profile";
+import Home from "./Pages/Home/Home";
 
 const App = () => {
-  useEffect(() => {
-    // meth();
-  });
-
   return (
-    <h1>
-      Hello my name is Himanshu <span>Baghel</span>
-    </h1>
+    <div>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/home" element={<Home />} />
+        </Routes>
+      </Router>
+    </div>
   );
 };
 
