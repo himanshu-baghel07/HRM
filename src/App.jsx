@@ -6,7 +6,11 @@ const App = () => {
     // meth();
   });
 
-  return <h1>Hello my name is Himanshu</h1>;
+  return (
+    <h1>
+      Hello my name is Himanshu <span>Baghel</span>
+    </h1>
+  );
 };
 
 export default App;
