@@ -23,50 +23,73 @@ const Dashboard = () => {
     return (
       <>
         <div className="commonStyleItem">
-          {toggle ? (
-            <MdArrowCircleRight
-              onClick={() => setToggle(!toggle)}
-              style={{ fontSize: "2rem" }}
-            />
-          ) : (
-            <MdArrowCircleLeft
-              onClick={() => setToggle(!toggle)}
-              style={{ fontSize: "2rem" }}
-              className="toggleLeftIcon"
-            />
-          )}
+          <MdArrowCircleLeft
+            onClick={() => setToggle(!toggle)}
+            className={`arrow-icon ${toggle ? "rotate" : ""}`}
+          />
         </div>
+
         <div
           className={`commonStyleItem ${
             currPageName === "home" && "selectedItemStyle"
-          }`}
+          } ${toggle && "commonStyleItemHide"} `}
           onClick={() => setCurrPageName("home")}
         >
-          <MdHome /> Home
+          <MdHome />
+          <span
+            className={`${
+              toggle ? "commonStyleItemFontHide" : "commonStyleItemFont"
+            }`}
+          >
+            Home
+          </span>
         </div>
         <div
           className={`commonStyleItem ${
             currPageName === "profile" && "selectedItemStyle"
-          }`}
+          } ${toggle && "commonStyleItemHide"}`}
           onClick={() => setCurrPageName("profile")}
         >
-          <MdAccountCircle /> Profile
+          <MdAccountCircle />
+          <span
+            className={`${
+              toggle ? "commonStyleItemFontHide" : "commonStyleItemFont"
+            }`}
+          >
+            Profile
+          </span>
         </div>
         <div
           className={`commonStyleItem ${
             currPageName === "myTeam" && "selectedItemStyle"
-          }`}
+          } ${toggle && "commonStyleItemHide"}`}
           onClick={() => setCurrPageName("myTeam")}
         >
-          <MdGroups /> My Team
+          <MdGroups />
+
+          <span
+            className={`${
+              toggle ? "commonStyleItemFontHide" : "commonStyleItemFont"
+            }`}
+          >
+            My Team
+          </span>
         </div>
         <div
           className={`commonStyleItem ${
             currPageName === "finances" && "selectedItemStyle"
-          }`}
+          } ${toggle && "commonStyleItemHide"}`}
           onClick={() => setCurrPageName("finances")}
         >
-          <MdMoney /> Finances
+          <MdMoney />
+
+          <span
+            className={`${
+              toggle ? "commonStyleItemFontHide" : "commonStyleItemFont"
+            } `}
+          >
+            My Finances
+          </span>
         </div>
       </>
     );
